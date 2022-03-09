@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout Using Grid</title>
+    <link rel="stylesheet" href="./grid.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>All About Dogs</h1>
+      </header>
+
+      <aside>
+        <h1>This is a really cool page about dogs</h1>
+        <ul>
+          <li><a href="#">Some cool dogs</a></li>
+          <li><a href="#">Some more cool dogs</a></li>
+          <li><a href="#">Even more cool dogs</a></li>
+        </ul>
+
+        <form onsubmit="handleNewsletterSubmit(event)">
+          <fieldset>
+            <legend>Newsletter</legend>
+            <input name="email" type="text" placeholder="your email..." />
+
+            <br />
+
+            <label for="newsletter"
+              >Yes, send me email about dogs
+              <input type="checkbox" id="newsletter" name="newsletter" />
+            </label>
+
+            <!-- <input type="date" name="randomdate" /> -->
+            <select name="dogbreed" multiple>
+              <option value="terrier">Terrier</option>
+              <option value="lab">Lab</option>
+              <option value="scotty">Scotty</option>
+            </select>
+            <br />
+
+            <button type="submit">Sign me up!</button>
+          </fieldset>
+        </form>
+      </aside>
+
+      <main>
+        <article>
+          <h1>Something something about dogs...</h1>
+          <p>Nothing else wags a tail as good as dogs</p>
+        </article>
+
+        <article>
+          <h1>Something something else about dogs...</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            corrupti sapiente eligendi blanditiis libero nam possimus doloribus
+            ipsa voluptas accusamus atque recusandae, hic repellendus error sint
+            laudantium assumenda inventore numquam!
+          </p>
+        </article>
+      </main>
+
+      <footer>
+        <p>&copy; 2022</p>
+        <p>Created by CSCI446 Class</p>
+      </footer>
+    </div>
+
+    <script>
+      function handleNewsletterSubmit(event) {
+        // debugger;
+        console.log(event.target);
+        window.eventTarget = event.target;
+
+        event.preventDefault();
+        const email = event.target.children[0].children[1].value;
+        window.alert(`You registered with ${email}`);
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

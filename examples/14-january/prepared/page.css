@@ -1,0 +1,23 @@
+.container {
+  padding-top: 64px;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.heading-large {
+  font-size: 64px;
+}
+
+.text {
+  font-size: 18px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+td {
+  padding: 8px;
+}

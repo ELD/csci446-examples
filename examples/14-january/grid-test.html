@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .layout {
+        display: grid;
+        grid-template-rows: 20% 80% 10%;
+        width: 1024px;
+        margin: 0 auto;
+      }
+
+      .nav {
+        display: inline;
+      }
+
+      .nav li {
+        display: inline;
+        padding: 10px;
+        list-style: none;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+      }
+
+      article {
+        background: red;
+      }
+
+      .content article {
+        margin-right: 16px;
+        background: yellow;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <nav class="nav">
+        <li><a href="">Home</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">About Me</a></li>
+        <li><a href="">Contact</a></li>
+      </nav>
+      <div class="content">
+        <article>
+          <h1>Article 1</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+            deleniti quia adipisci, molestias dolorum voluptate labore nemo
+            quaerat animi explicabo similique dolore odit, ipsum reprehenderit
+            ducimus qui. Enim, nulla rem?
+          </p>
+        </article>
+        <article>
+          <h1>Article 2</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+            deleniti quia adipisci, molestias dolorum voluptate labore nemo
+            quaerat animi explicabo similique dolore odit, ipsum reprehenderit
+            ducimus qui. Enim, nulla rem?
+          </p>
+        </article>
+        <article>
+          <h1>Article 3</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+            deleniti quia adipisci, molestias dolorum voluptate labore nemo
+            quaerat animi explicabo similique dolore odit, ipsum reprehenderit
+            ducimus qui. Enim, nulla rem?
+          </p>
+        </article>
+      </div>
+      <footer>Created by CSCI446 Class</footer>
+    </div>
+  </body>
+</html>
