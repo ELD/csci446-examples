@@ -2,3 +2,7 @@ node_modules/
 assignment/
 pokeapi-react/
 .DS_Store
+*-assignment/
+
+# Local Netlify folder
+.netlify
