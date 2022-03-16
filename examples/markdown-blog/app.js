@@ -9,23 +9,10 @@ const App = express();
 App.set("views", path.join(process.cwd(), "views"));
 App.set("view engine", "ejs");
 
-App.use(express.static(path.join(process.cwd(), "../public")));
+App.use(express.static(path.join(process.cwd(), "public")));
 
-App.get("/", function (req, res, next) {
-  console.log("auth check");
-  res.status(403).send("not auth'd");
-});
 App.get("/", function (req, res) {
   res.render("index", { title: "Express" });
-});
-
-App.get("/:pageTitle", function (req, res, next) {
-  if (req.params.pageTitle === "authPost") {
-    res.status(403).send("Unauthorized");
-    return;
-  }
-
-  next();
 });
 
 App.get("/:pageTitle", async function (req, res) {
