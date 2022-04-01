@@ -11,8 +11,8 @@ import connect from "./lib/db.js";
 const app = express();
 
 app.set("db", async (collection) => {
-  const db = await connect();
-  return db.get("mongodb_lab").collection(collection);
+  const mongo = await connect();
+  return mongo.db("mongodb_lab").collection(collection);
 });
 
 app.use(logger("dev"));
