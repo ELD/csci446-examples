@@ -128,6 +128,8 @@ There are better ways to initiate database connections, but this works for us, f
 If you look at `app.js`, you'll see that we're setting the function on the app object so
 we can fetch it out of route handlers later on.
 
+_Note: Make sure you run `npm install` before attempting to run the app_
+
 ### 3. Create a set of route handlers to retrieve and modify classes
 
 We want to start building a REST API. Let's start with just classes. You'll want
