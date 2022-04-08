@@ -55,8 +55,10 @@ ClassesRouter.patch("/:class_id", async (req, res) => {
 });
 
 ClassesRouter.get("/:class_id/students", async (req, res) => {
+  const classDb = await req.app.get("db")("classes");
   const classes_students = await req.app.get("db")("classes_students");
   const students = await req.app.get("db")("students");
+  const classe = await classDb.findOne({ _id: Number(req.params.class_id) });
   const classes = await classes_students
     .find({ class_id: Number(req.params.class_id) })
     .toArray();
@@ -66,7 +68,7 @@ ClassesRouter.get("/:class_id/students", async (req, res) => {
     )
   );
 
-  res.json(studentsInClass);
+  res.json({ ...classe, students: [...studentsInClass] });
 });
 
 export default ClassesRouter;
