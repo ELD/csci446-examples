@@ -47,4 +47,19 @@ ClassesRouter.delete("/:class_id", async (req, res) => {
 });
 // ClassesRouter.patch("/:class_id", async (req, res) => {});
 
+ClassesRouter.get("/:class_id/students", async (req, res) => {
+  const classes_students = await req.app.get("db")("classes_students");
+  const students = await req.app.get("db")("students");
+  const classes = await classes_students
+    .find({ class_id: Number(req.params.class_id) })
+    .toArray();
+  const studentsInClass = await Promise.all(
+    classes.map(
+      async (classe) => await students.findOne({ _id: classe.student_id })
+    )
+  );
+
+  res.json(studentsInClass);
+});
+
 export default ClassesRouter;
