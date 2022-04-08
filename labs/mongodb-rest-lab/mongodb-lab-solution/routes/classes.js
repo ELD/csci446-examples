@@ -45,7 +45,14 @@ ClassesRouter.delete("/:class_id", async (req, res) => {
   await db.deleteOne({ _id: Number(req.params.class_id) });
   res.sendStatus(200);
 });
-// ClassesRouter.patch("/:class_id", async (req, res) => {});
+
+ClassesRouter.patch("/:class_id", async (req, res) => {
+  const db = await req.app.get("db")("classes");
+  await db.updateOne({ _id: Number(req.params.class_id) }, { $set: req.body });
+  const updatedClass = await db.findOne({ _id: Number(req.params.class_id) });
+
+  res.status(200).json(updatedClass);
+});
 
 ClassesRouter.get("/:class_id/students", async (req, res) => {
   const classes_students = await req.app.get("db")("classes_students");
