@@ -184,6 +184,8 @@ And we'll get back an array of objects that are the students in the class:
 }
 ```
 
+**You can see a possible solution here: [`classes.js`](https://github.com/ELD/csci446-examples/blob/main/labs/mongodb-rest-lab/mongodb-lab-solution/routes/classes.js#L50-L63)**
+
 ## Resources
 
 - [MongoDB Tutorial](https://www.mongodbtutorial.org)
