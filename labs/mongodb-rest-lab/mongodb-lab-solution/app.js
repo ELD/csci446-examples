@@ -6,6 +6,7 @@ import logger from "morgan";
 import cors from "cors";
 
 import ClassesRouter from "./routes/classes.js";
+import StudentsRouter from "./routes/students.js";
 import connect from "./lib/db.js";
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(path.resolve(), "public")));
 
 app.use("/classes", ClassesRouter);
+app.use("/students", StudentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

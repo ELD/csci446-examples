@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Classes from "./Classes";
 import "./App.css";
+import Class from "./Class";
+import Students from "./Students";
 
 function App() {
-  const [classes, setClasses] = useState([]);
-  useEffect(() => {
-    fetch(`http://localhost:8000/classes`)
-      .then((body) => body.json())
-      .then((json) => setClasses(() => [...json]));
-  }, []);
-
   return (
     <>
-      <h1>Classes</h1>
-      <ul>
-        {classes.map((classe) => (
-          <li>{classe.name}</li>
-        ))}
-      </ul>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Classes />} />
+          <Route path="classes" element={<Classes />} />
+          <Route path="classes/:classId">
+            <Route path="" element={<Class />} />
+            <Route path="students" element={<Students />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
