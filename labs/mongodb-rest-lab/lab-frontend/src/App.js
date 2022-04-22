@@ -3,6 +3,7 @@ import Classes from "./Classes";
 import "./App.css";
 import Class from "./Class";
 import Students from "./Students";
+import NewStudent from "./NewStudent";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="classes/:classId">
             <Route path="" element={<Class />} />
             <Route path="students" element={<Students />} />
+            <Route path="students/new" element={<NewStudent />} />
           </Route>
         </Routes>
       </BrowserRouter>
