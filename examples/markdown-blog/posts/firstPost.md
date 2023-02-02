@@ -1,3 +1,0 @@
-# First Post
-
-Something something something...
