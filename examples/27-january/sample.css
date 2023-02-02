@@ -1,0 +1,26 @@
+.nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.form fieldset {
+    border: thick double #32a1ce;
+}
+
+.form input {
+    border: 1px solid #32a1ce;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.button-submit {
+    background-color: #32a1ce;
+    border: 1px solid #32a1ce;
+}

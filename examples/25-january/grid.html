@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid Layout Demo</title>
+    <!-- <link rel="stylesheet" href="grid.css" /> -->
+    <style>
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 1em;
+        font-family: sans-serif;
+      }
+
+      header {
+        grid-column: 1 / 4;
+      }
+
+      header nav ul {
+        padding: 0;
+      }
+
+      header nav ul li {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      aside {
+        grid-column: 1 / 2;
+      }
+
+      main {
+        grid-column: 2 / 4;
+        display: flex;
+        flex-direction: row;
+      }
+
+      footer {
+        grid-column: 1 / 4;
+      }
+    </style>
+  </head>
+  <body class="layout">
+    <header>
+      <h1>Some Sample Header</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside>
+      <h2>Some content off to the side</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos omnis debitis autem, nesciunt at ea possimus consequatur itaque atque iste tenetur
+        culpa aspernatur expedita fugiat molestias saepe soluta sed repudiandae.
+      </p>
+    </aside>
+    <main>
+      <article>
+        <h2>Article 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae provident, corrupti quos similique, nesciunt, laudantium officia cumque
+          sapiente libero consectetur quae. Sit quia dicta quas quibusdam deleniti blanditiis iste?
+        </p>
+      </article>
+      <article>
+        <h2>Article 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae provident, corrupti quos similique, nesciunt, laudantium officia cumque
+          sapiente libero consectetur quae. Sit quia dicta quas quibusdam deleniti blanditiis iste?
+        </p>
+      </article>
+      <article>
+        <h2>Article 3</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae provident, corrupti quos similique, nesciunt, laudantium officia cumque
+          sapiente libero consectetur quae. Sit quia dicta quas quibusdam deleniti blanditiis iste?
+        </p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2023 Some Random Example&trade;</p>
+    </footer>
+  </body>
+</html>

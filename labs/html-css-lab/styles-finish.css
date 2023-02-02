@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif
+}
+
+.gray-circle {
+    float: left;
+}
+
+.reposition {
+    position: absolute;
+    right: 150px;
+}

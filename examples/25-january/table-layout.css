@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+}
+
+table {
+    width: 64rem;
+    border: 0;
+    border-spacing: 0;
+}
+
+.header {
+    background-color: red;
+    width: 100%;
+}
+
+.nav {
+    background-color: blue;
+    width: 33%;
+}
+
+.content {
+    background-color: green;
+    width: 66%;
+}
+
+.footer {
+    background-color: gray;
+}

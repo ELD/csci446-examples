@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: green;
+}
+
+nav {
+    background-color: yellow;
+}
+
+aside {
+    background-color: red;
+    color: white;
+    float: left;
+    width: 25%;
+}
+
+main {
+    background-color: blue;
+    color: white;
+    float: right;
+    width: 75%;
+    right: 0%;
+    height: 100%;
+}
+
+footer {
+    background-color: gray;
+    clear: both;
+}
+
+.test {
+    background-color: blue;
+}
