@@ -14,16 +14,30 @@
     <script>
       const URL = "https://pokeapi.co/api/v2/pokemon";
 
-      document.getElementById("pokemonForm").addEventListener("submit", async (event) => {
+      document.getElementById("pokemonForm").addEventListener("submit", (event) => {
         event.preventDefault();
-        const pokemon = event.target[0].value;
-        let response = await fetch(`${URL}/${pokemon}`);
-        let json = await response.json();
         let parent = document.getElementById("pokemon");
-        let image = document.createElement("img");
-        image.src = json.sprites.front_default;
-        parent.appendChild(image);
+        const pokemon = event.target[0].value;
+        let response = fetch(`${URL}/${pokemon}`)
+          .then((data) => data.json())
+          .then((json) => {
+            let image = document.createElement("img");
+            image.src = json.sprites.front_default;
+            parent.appendChild(image);
+          });
       });
+
+      // async/await version of this code
+      // document.getElementById("pokemonForm").addEventListener("submit", async (event) => {
+      //   event.preventDefault();
+      //   const pokemon = event.target[0].value;
+      //   let response = await fetch(`${URL}/${pokemon}`);
+      //   let json = await response.json();
+      //   let parent = document.getElementById("pokemon");
+      //   let image = document.createElement("img");
+      //   image.src = json.sprites.front_default;
+      //   parent.appendChild(image);
+      // });
     </script>
   </body>
 </html>
