@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Quote from "./Quote";
+import Todo from "./Todo";
 
 function App() {
   const [quote, setQuote] = useState(null);
@@ -14,6 +15,7 @@ function App() {
     <div>
       <button onClick={fetchQuote}>Fetch random quote</button>
       {quote ? <Quote quote={quote} /> : null}
+      <Todo />
     </div>
   );
 }
