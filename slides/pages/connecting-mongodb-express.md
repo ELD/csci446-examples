@@ -132,12 +132,20 @@ async function connect(databaseName, collectionName) {
 - We can store objects of all kinds using this scheme
 - To retrieve, we get the `app` reference through the `request` argument
 
+```javascript
+async function connect(databaseName) {
+  const client = new MongoClient("mongodb://localhost:27017");
+  await client.connect();
+  return client.db(databaseName);
+}
+
+app.set("db", connect('test'));
+```
+
 ```javascript{2|4|all}
 app.get('/', async (req, res) => {
-  const db = req.app.get('mongoDatabase');
-
+  const db = await req.app.get('mongoDatabase');
   const allWidgets = await db.collection('widgets').find().toArray();
-
   return res.json(allWidgets);
 });
 ```
