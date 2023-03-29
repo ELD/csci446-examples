@@ -1,1 +1,1 @@
-// TODO: Import the MongoClient and buidl your connection function
+// TODO: Import the MongoClient and build your connection function
