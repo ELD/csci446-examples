@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [pokemon, setPokemon] = useState({});
+  const [pokemonName, setPokemonName] = useState('');
   const handleFormSubmission = (event) => {
     event.preventDefault();
 
-    const pokemonName = event.target[0].value.toLowerCase();
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then((body) => body.json())
       .then((json) => {
-        console.log(json);
         setPokemon(json);
       });
   };
@@ -18,7 +17,7 @@ function App() {
     <>
       <div>
         <form onSubmit={handleFormSubmission}>
-          <input type="text" placeholder="Pokemon name..." />
+          <input type="text" placeholder="Pokemon name..." onChange={(e) => setPokemonName(e.target.value)} value={pokemonName} />
           <button type="submit">Fetch Pokemon</button>
         </form>
       </div>
