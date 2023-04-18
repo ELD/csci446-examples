@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders a fetch pokemon header', () => {
   render(<App />);
   const linkElement = screen.getByText(/fetch pokemon/i);
   expect(linkElement).toBeInTheDocument();
@@ -17,5 +17,5 @@ it('renders the pokemon I entered into the input', async () => {
 
   await waitFor(() => {
     screen.getByText(/ditto/i);
-  })
+  });
 })
