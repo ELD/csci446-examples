@@ -1,0 +1,20 @@
+{
+  "name": "auth-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www.js",
+    "seed": "node ./bin/seed.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "mongodb": "^5.3.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.22",
+		"bcrypt": "^5.1.0"
+  }
+}

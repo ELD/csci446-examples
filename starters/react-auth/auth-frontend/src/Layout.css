@@ -1,0 +1,30 @@
+nav {
+    padding-top: 16px;
+}
+
+nav > ul {
+    list-style: none;
+    display: inline;
+    padding-left: 8px;
+}
+
+nav > ul > li {
+    display: inline-block;
+    padding: 8px;
+    margin: 0px 8px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+nav > ul > li:hover {
+    background-color: #ddd;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav > ul > li > a:hover {
+    color: #000;
+}
