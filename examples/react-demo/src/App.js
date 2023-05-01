@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import StyledPokemon from './Pokemon';
 
 function App() {
   const [pokemon, setPokemon] = useState({});
@@ -23,10 +24,7 @@ function App() {
       </div>
       <div>
         {pokemon?.species ? (
-          <div>
-            <h1>{pokemon.species.name}</h1>
-            <img src={pokemon.sprites.front_default} alt={pokemon.species.name} />
-          </div>
+          <StyledPokemon name={pokemon.name} sprite={pokemon.sprites.front_default} />
         ) : null}
       </div>
     </>
