@@ -16,13 +16,12 @@ app.ws('/:room', (ws, req) => {
   const room = req.params.room;
 
   if (!websocketMap.has(room)) {
-    websocketMap[room] = [];
+    websocketMap.set(room, new Set());
   }
 
-  websocketMap[room].push(ws);
-  console.log(websocketMap[room]);
+  websocketMap.get(room).add(ws);
   ws.on('message', (message) => {
-    websocketMap[room].forEach((ws) => {
+    websocketMap.get(room).forEach((ws) => {
       ws.send(message)
     });
   });
