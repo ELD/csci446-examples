@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .content {
+        display: grid;
+        grid-template-areas: "nav nav nav" "aside main main" "footer footer footer";
+      }
+
+      nav {
+        grid-area: nav;
+
+        a {
+          color: white;
+          text-decoration: none;
+          padding: 0.25em 0.5em;
+          background-color: slategray;
+          border-radius: 0.25em;
+        }
+
+        a:hover {
+          color: black;
+          background-color: lightgray;
+        }
+
+        h1 {
+          display: inline-block;
+        }
+
+        ul {
+          display: inline-block;
+          list-style-type: none;
+          padding-left: 0;
+
+          li {
+            display: inline-block;
+            margin-right: 0.5em;
+          }
+        }
+      }
+
+      main {
+        grid-area: main;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <nav>
+        <h1><a href="#">Main Link Here</a></h1>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </nav>
+      <aside>
+        <section>
+          <p>lorem ipsum</p>
+        </section>
+      </aside>
+      <main>
+        <p>Lorem Ipsum...something something about something</p>
+        <img src="images/dalle-penguin-bowling.png" height=256 alt=""/>
+        <p>Lorem Ipsum...something something about something</p>
+      </main>
+      <footer>
+        <p>&copy; 2024</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+
+
