@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms</title>
+    <style>
+      a:hover {
+        color: red;
+        padding: 32px;
+        text-decoration: none;
+        background-color: yellow;
+        border-radius: 8px;
+      }
+
+      #details {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <image src="images/dalle-penguin-bowling.png" height=25>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </header>
+    <form method="POST">
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" placeholder="Username...">
+      <br>
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" placeholder="Password...">
+      <br>
+      <fieldset>
+        <legend>Activity Status</legend>
+        <label for="active">Online</label>
+        <input type="radio" id="active" name="status" value="active">
+        <label for="offline">Offline</label>
+        <input type="radio" id="offline" name="status" value="offline">
+      </fieldset>
+      <select name="nonoption" required>
+        <option disabled selected value>-- Choose a nonoption --</option>
+        <option disabled>-- Options --</option>
+        <option value="1">Option 1</option>
+        <option value="1">Option 1</option>
+        <option value="1">Option 1</option>
+        <option value="1">Option 1</option>
+        <option disabled>-- You actually do have a choice --</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <br>
+      <button type="submit">Log in</button>
+    </form>
+    <section id="details">
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+      <div>
+      <details>
+        <summary>First details view</summary>
+        <p>You clicked on this and here's some more content</p>
+      </details>
+      <details id="nonopenable">
+        <summary>Second details view</summary>
+        <p>You clicked on this and here's some more content</p>
+      </details>
+      <details style="order: 2">
+        <summary>Third details view</summary>
+        <p>You clicked on this and here's some more content</p>
+      </details>
+      </div>
+    </section>
+    <p>Something underneath the flexed container</p>
+  </body
+</html>
