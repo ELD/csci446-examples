@@ -1,6 +1,15 @@
+#postRoot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 article {
+  min-width: 300px;
   display: flex;
   flex-direction: column;
+  border: 1px solid #000;
 }
 
 h1 {
