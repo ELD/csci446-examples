@@ -1,0 +1,21 @@
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+p {
+  font-size: 1.25em;
+  text-align: left;
+
+  span.tags {
+    color: blue;
+    font-size: 0.8em;
+  }
+}
+
+
