@@ -1,5 +1,5 @@
 const form = document.getElementById("loadPost");
-const postRoot = document.getElementById("postRoot")
+const postRoot = document.getElementById("postRoot");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
