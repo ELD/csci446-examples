@@ -1,0 +1,15 @@
+{
+  "name": "express-project-starter",
+  "version": "0.1.0",
+  "description": "Starter template for Express assignments in CSCI446",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
