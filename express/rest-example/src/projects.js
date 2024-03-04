@@ -1,40 +1,34 @@
 import { Router } from "express";
-import { open } from "node:fs/promises";
+import * as fs from "node:fs/promises";
 
-const app = Router();
+const ProjectsRouter = Router();
 
-app.get("/projects", async (request, response) => {
-  const projectsFile = await open("data/store.json");
-  const projects = JSON.parse(await projectsFile.readFile("utf-8"));
-  projectsFile.close();
-  response.json(projects);
+ProjectsRouter.get("/projects", async (request, response) => {
+  let todoResponse = [];
+  const directory = await fs.readdir("storage/");
+  for (const file of directory) {
+    todoResponse.push(JSON.parse(await fs.readFile(`storage/${file}`)));
+  }
+  response.json(todoResponse);
 });
 
-app.get("/projects/:id", async (req, res) => {
-  const projectsFile = await open("data/store.json");
-  const projects = JSON.parse(await projectsFile.readFile("utf-8"));
-  const project = projects.filter((p) => p.id === Number(req.params.id))[0];
-  if (!project) {
+ProjectsRouter.get("/projects/:id", async (req, res) => {
+  const projectsFile = await fs.open(`storage/${req.params.id}.json`);
+  if (!projectsFile) {
     return res.status(404).end();
   }
-
-  projectsFile.close();
+  const project = JSON.parse(await projectsFile.readFile("utf-8"));
 
   res.json(project);
 });
 
-app.put("/projects/:id", async (req, res) => {
-  const projectsFile = await open("data/store.json", "r+");
-  const projects = JSON.parse(await projectsFile.readFile("utf-8"));
-
-  const updatedProject = req.body;
-  updatedProject.id = req.params.id;
-  projects[req.params.id - 1] = updatedProject;
-
-  await projectsFile.writeFile(JSON.stringify(projects));
-  await projectsFile.close();
-  res.status(200).json(updatedProject);
+ProjectsRouter.put("/projects/:id", async (req, res) => {
+  await fs.writeFile(`storage/${req.params.id}.json`, JSON.stringify(req.body), {
+    encoding: 'utf-8',
+    flag: 'w',
+  });
+  res.status(200).json(req.body);
 });
 
-export default app;
+export default ProjectsRouter;
 
