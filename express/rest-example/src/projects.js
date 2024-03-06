@@ -7,7 +7,11 @@ ProjectsRouter.get("/projects", async (request, response) => {
   let todoResponse = [];
   const directory = await fs.readdir("storage/");
   for (const file of directory) {
-    todoResponse.push(JSON.parse(await fs.readFile(`storage/${file}`)));
+    todoResponse.push(
+      JSON.parse(
+        await fs.readFile(`storage/${file}`)
+      )
+    );
   }
   response.json(todoResponse);
 });
@@ -23,10 +27,7 @@ ProjectsRouter.get("/projects/:id", async (req, res) => {
 });
 
 ProjectsRouter.put("/projects/:id", async (req, res) => {
-  await fs.writeFile(`storage/${req.params.id}.json`, JSON.stringify(req.body), {
-    encoding: 'utf-8',
-    flag: 'w',
-  });
+  await fs.writeFile(`storage/${req.params.id}.json`, JSON.stringify(req.body));
   res.status(200).json(req.body);
 });
 
