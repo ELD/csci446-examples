@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CreateForm from "./CreateForm";
 import Listing from "./Listing";
+import Listing2, { loadProjects } from "./Listing2";
 
 // Using the createbrowserRouter method to create the router provider
 // It takes a list of objects representing the routes in the application
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/all",
         element: <Listing />,
+      },
+      {
+        path: "/all/new",
+        element: <Listing2 />,
+        loader: loadProjects,
       }
     ]
   }
