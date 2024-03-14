@@ -7,8 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CreateForm from "./CreateForm";
 import Listing from "./Listing";
 import Listing2, { loadProjects } from "./Listing2";
+import Project, { loadProject } from "./Project";
 
-// Using the createbrowserRouter method to create the router provider
+// Using the createBrowserRouter method to create the router provider
 // It takes a list of objects representing the routes in the application
 // Nesting routes via the `children` property embeds the rendered `element`s. So, for example
 // `<App />` will render as a wrapper around the `<CreateForm />` or `<Listing />` components for
@@ -19,18 +20,23 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/new",
+        path: "/projects/new",
         element: <CreateForm />,
       },
       {
-        path: "/all",
+        path: "/projects",
         element: <Listing />,
       },
       {
-        path: "/all/new",
+        path: "/projects/v2",
         element: <Listing2 />,
         loader: loadProjects,
-      }
+      },
+			{
+				path: "/projects/:projectId",
+				element: <Project />,
+				loader: loadProject,
+			}
     ]
   }
 ]);
