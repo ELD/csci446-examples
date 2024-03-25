@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { v4 as uuidv4 } from "uuid";
 import { ObjectId } from "mongodb";
 
 const ProjectsRouter = Router();
@@ -32,7 +31,7 @@ ProjectsRouter.post("/projects", async (req, res) => {
 });
 
 ProjectsRouter.put("/projects/:id", async (req, res) => {
-	req.body._id = req.params.id;
+	req.body._id = new ObjectId(req.params.id);
 	const db = req.app.get("db");
 	try {
 		const updateResult = await db.collection("projects").update({ _id: new ObjectId(req.params.id) }, req.body);
