@@ -15,37 +15,37 @@ import Project, { loadProject } from "./Project";
 // `<App />` will render as a wrapper around the `<CreateForm />` or `<Listing />` components for
 // those matching routes.
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/projects/new",
-        element: <CreateForm />,
-      },
-      {
-        path: "/projects",
-        element: <Listing2 />,
-        loader: loadProjects,
-      },
-      {
-        path: "/projects-do-not-use",
-        element: <Listing />,
-      },
+	{
+		path: "/",
+		element: <Layout />,
+		children: [
+			{
+				path: "/projects/new",
+				element: <CreateForm />,
+			},
+			{
+				path: "/projects",
+				element: <Listing2 />,
+				loader: loadProjects,
+			},
+			{
+				path: "/projects-do-not-use",
+				element: <Listing />,
+			},
 			{
 				path: "/projects/:projectId",
 				element: <Project />,
 				loader: loadProject,
 			}
-    ]
-  }
+		]
+	}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+	<React.StrictMode>
+		<RouterProvider router={router} />
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
